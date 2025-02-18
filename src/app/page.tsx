@@ -1,9 +1,11 @@
-import React from "react";
+import ProfileSection from "@/components/profile-section";
 
 const Home = () => {
   return (
-    <div>
-      <h1>Achardian Portfolio</h1>
+    <div className="mx-auto max-w-6xl">
+      <div className="w-full">
+        <ProfileSection />
+      </div>
     </div>
   );
 };

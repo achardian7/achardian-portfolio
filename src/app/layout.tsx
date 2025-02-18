@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Open_Sans } from "next/font/google";
 import "./globals.css";
+import CursorHighlighter from "@/components/cursor-highlighter";
+import { cn } from "@/lib/cn";
 
 const font = Open_Sans({
-  subsets: ["cyrillic"],
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -18,7 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={font.className}>{children}</body>
+      <body className={cn("bg-[#001233]", font.className)}>
+        {children}
+        <CursorHighlighter />
+      </body>
     </html>
   );
 }
