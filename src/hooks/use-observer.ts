@@ -7,7 +7,12 @@ const useObserver = (activeSection: TActiveSection) => {
   const { setObserver } = useObserverStore();
 
   useEffect(() => {
-    setObserver(activeSection);
+    if (window.location.hash) {
+      const hash = window.location.hash.slice(1);
+      setObserver(hash as TActiveSection);
+    } else {
+      setObserver(activeSection);
+    }
   }, [inView]);
 
   return { ref };

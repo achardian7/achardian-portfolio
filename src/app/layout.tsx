@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="scrollbar-thin scrollbar-track-emerald-600/10 scrollbar-thumb-emerald-600"
+      className="overflow-x-hidden scrollbar-thin scrollbar-track-emerald-600/10 scrollbar-thumb-emerald-600"
     >
       <body className={cn("bg-[#001233]", font.className)}>
         {children}

@@ -36,17 +36,17 @@ export const links = [
 export const socials = [
   {
     id: 1,
-    link: "",
+    link: "https://github.com/achardian7",
     Icon: FaGithub,
   },
   {
     id: 2,
-    link: "",
+    link: "https://instagram.com/achardian15?igshid=NzZlODBkYWE4Ng==",
     Icon: FaInstagram,
   },
   {
     id: 3,
-    link: "",
+    link: "mailto:achardianself@gmail.com",
     Icon: MdOutlineEmail,
   },
 ];

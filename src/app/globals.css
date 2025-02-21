@@ -22,4 +22,8 @@ html {
   .input {
     @apply w-full appearance-none rounded bg-gray-200/10 px-4 py-2 leading-tight text-gray-100 focus:border-emerald-500 focus:outline-none;
   }
+
+  .chevron {
+    @apply top-[50%] z-50 flex -translate-y-[50%] items-center justify-center bg-emerald-600/10 p-5 text-emerald-600 transition-colors duration-300 hover:bg-emerald-500/30;
+  }
 }
