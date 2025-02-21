@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { links, socials } from "@/lib/constant";
+import { socials } from "@/lib/constant";
+import MenuLinks from "./menu-links";
 
 const ProfileSection = () => {
   return (
-    <section className="fixed flex h-screen w-[50%] flex-col justify-between space-y-3 py-20">
+    <section className="flex h-screen w-full flex-col justify-center space-y-10 px-5 py-20 lg:fixed lg:w-[35%] lg:justify-between lg:space-y-3 lg:px-0">
       <div className="flex flex-col space-y-3">
         <h1 className="text-4xl font-bold text-white">Muchammad Ardiansyah</h1>
         <h2 className="text-xl font-semibold text-gray-200">
@@ -15,18 +16,7 @@ const ProfileSection = () => {
         </p>
       </div>
 
-      <div className="flex flex-col space-y-6 text-gray-400">
-        {links.map((link) => (
-          <Link
-            key={link.path}
-            href={link.path}
-            className="group flex w-fit items-center space-x-3 text-[14px] font-bold uppercase tracking-widest hover:text-white"
-          >
-            <span className="block h-[2px] w-10 bg-gray-400 duration-100 ease-in-out group-hover:w-20 group-hover:bg-white"></span>
-            <span>{link.name}</span>
-          </Link>
-        ))}
-      </div>
+      <MenuLinks />
 
       <div className="flex space-x-10 text-gray-400">
         {socials.map((social) => (

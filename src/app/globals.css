@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+@layer components {
+  .section-container {
+    @apply flex min-h-svh w-full flex-col space-y-10 py-10 text-[18px] text-gray-400 lg:mx-[50%] lg:w-1/2;
+  }
+
+  .section-title {
+    @apply sticky top-0 z-10 block bg-[#001233]/40 p-5 backdrop-blur-xl lg:hidden;
+  }
+
+  .section-title > h2 {
+    @apply text-xl font-bold uppercase tracking-wider text-gray-200;
+  }
+
+  .input {
+    @apply w-full appearance-none rounded bg-gray-200/10 px-4 py-2 leading-tight text-gray-100 focus:border-emerald-500 focus:outline-none;
+  }
+}
