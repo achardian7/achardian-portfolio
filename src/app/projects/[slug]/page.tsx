@@ -26,7 +26,7 @@ const Page = async ({ params }: { params: Promise<{ slug: string }> }) => {
               className="font-semibold text-emerald-600 hover:underline"
               target="_blank"
             >
-              Preview
+              View
             </Link>
           </div>
         </div>
