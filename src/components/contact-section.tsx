@@ -7,12 +7,20 @@ import { toast } from "react-toastify";
 
 const ContactSection = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const sendEmail = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
     try {
+      if (!name || !email || !message) {
+        toast.error("All fields are required");
+        return false;
+      }
+
       if (formRef) {
         await emailjs.sendForm(
           process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID as string,
@@ -55,6 +63,8 @@ const ContactSection = () => {
               className="input"
               id="name"
               name="from_name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div className="flex flex-col space-y-2">
@@ -67,6 +77,8 @@ const ContactSection = () => {
               className="input"
               id="email"
               name="from_email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="flex flex-col space-y-2">
@@ -79,6 +91,8 @@ const ContactSection = () => {
               id="name"
               rows={10}
               name="message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
 
